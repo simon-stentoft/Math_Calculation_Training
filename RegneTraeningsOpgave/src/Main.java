@@ -30,6 +30,7 @@ public class Main {
                     regnestykker.minusMathProblems2();
                 }
             }
+            System.out.println("lolol");
         }
     }
 }
