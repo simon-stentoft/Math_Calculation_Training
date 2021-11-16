@@ -1,40 +1,54 @@
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Regnestykker {
 
     public static void plusMathProblems1() {
-        Scanner scanner = new Scanner(System.in);
-        int max = 100;
-        int min = 1;
-        int range = max - min + 1;
-        int right = 0;
-        int wrong = 0;
-        String proeveResultat;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            int max = 100;
+            int min = 1;
+            int range = max - min + 1;
+            int right = 0;
+            int wrong = 0;
+            String name = "";
 
-        System.out.println("Her kommer der nogle plus regnestykker.");
+            System.out.print("Skriv dit navn: ");
+            name = scanner.nextLine();
+            PrintWriter file = new PrintWriter(name + ".txt");
 
-        for (int i = 0; i < 10; i++) {
-            int a = (int)(Math.random()* range) + min;
-            int b = (int)(Math.random()* range) + min;
-            int result = a + b;
-            System.out.print("Hvad giver " + a + " + " + b + ": ");
-            int input = scanner.nextInt();
-            if (input != result) {
-                System.out.println("Du svarede forkert, det korrekte svar er " + result + ".");
-                wrong++;
+            System.out.println("Her kommer der nogle plus regnestykker.");
+
+            for (int i = 0; i < 10; i++) {
+                int a = (int) (Math.random() * range) + min;
+                int b = (int) (Math.random() * range) + min;
+                int result = a + b;
+                System.out.print("Hvad giver " + a + " + " + b + ": ");
+                int input = scanner.nextInt();
+                if (input != result) {
+                    System.out.println("Du svarede forkert, det korrekte svar er " + result + ".");
+                    wrong++;
+                } else {
+                    System.out.println("Du svarede rigtigt!");
+                    right++;
+                }
             }
-            else {
-                System.out.println("Du svarede rigtigt!");
-                right++;
-            }
+            file.format("Antal rigtige: %d\n",right);
+            file.append("Regneart: Plus \n");
+            file.append("Sværhedsgrad: 1");
+            file.close();
+
+            double procentRight = (((double) right / 10) * 100);
+            System.out.println("Her er dine resultater: " +
+                    "\nAntal rigtige: " + right +
+                    "\nAntal forkerte: " + wrong +
+                    "\nProcent del rigtige: " + procentRight + "%" +
+                    "\nRegneart: Plusstykker" +
+                    "\nSværhedsgrad: 1");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        double procentDelRigtig = (((double) right/10) * 100);
-        System.out.println("Her er dine resultater: " +
-                "\nAntal rigtige: " + right +
-                "\nAntal forkerte: " + wrong +
-                "\nProcent del rigtige: " + procentDelRigtig + "%" +
-                "\nRegneart: Plusstykker" +
-                "\nSværhedsgrad: 1");
     }
 
     public static void plusMathProblems2() {
@@ -64,11 +78,11 @@ public class Regnestykker {
                 right++;
             }
         }
-        double procentDelRigtig = (((double) right/10) * 100);
+        double procentRight = (((double) right/10) * 100);
         System.out.println("Her er dine resultater: " +
                 "\nAntal rigtige: " + right +
                 "\nAntal forkerte: " + wrong +
-                "\nProcent del rigtige: " + procentDelRigtig + "%" +
+                "\nProcent del rigtige: " + procentRight + "%" +
                 "\nRegneart: Plusstykker" +
                 "\nSværhedsgrad: 2");
     }
@@ -99,11 +113,11 @@ public class Regnestykker {
                 right++;
             }
         }
-        double procentDelRigtig = (((double) right/10) * 100);
+        double procentRight = (((double) right/10) * 100);
         System.out.println("Her er dine resultater: " +
                 "\nAntal rigtige: " + right +
                 "\nAntal forkerte: " + wrong +
-                "\nProcent del rigtige: " + procentDelRigtig + "%" +
+                "\nProcent del rigtige: " + procentRight + "%" +
                 "\nRegneart: Minusstykker" +
                 "\nSværhedsgrad: 1");
     }
@@ -135,11 +149,11 @@ public class Regnestykker {
                 right++;
             }
         }
-        double procentDelRigtig = (((double) right/10) * 100);
+        double procentRight = (((double) right/10) * 100);
         System.out.println("Her er dine resultater: " +
                 "\nAntal rigtige: " + right +
                 "\nAntal forkerte: " + wrong +
-                "\nProcent del rigtige: " + procentDelRigtig + "%" +
+                "\nProcent del rigtige: " + procentRight + "%" +
                 "\nRegneart: Minusstykker" +
                 "\nSværhedsgrad: 2");
     }
