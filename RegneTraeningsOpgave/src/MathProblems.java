@@ -2,11 +2,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Regnestykker {
+public class MathProblems {
+    Scanner scanner = new Scanner(System.in);
 
     public void plusMathProblems1() {
         try {
-            Scanner scanner = new Scanner(System.in);
             int max = 100;
             int min = 1;
             int range = max - min + 1;
@@ -52,7 +52,6 @@ public class Regnestykker {
     }
 
     public void plusMathProblems2() {
-        Scanner scanner = new Scanner(System.in);
         int max = 100;
         int min = 1;
         int range = max - min + 1;
@@ -88,7 +87,6 @@ public class Regnestykker {
     }
 
     public void minusMathProblems1() {
-        Scanner scanner = new Scanner(System.in);
         int max = 100;
         int min = 1;
         int range = max - min + 1;
@@ -123,7 +121,6 @@ public class Regnestykker {
     }
 
     public void minusMathProblems2() {
-        Scanner scanner = new Scanner(System.in);
         int max = 100;
         int min = 1;
         int range = max - min + 1;

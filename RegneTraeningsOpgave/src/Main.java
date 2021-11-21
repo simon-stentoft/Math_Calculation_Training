@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Regnestykker regnestykker = new Regnestykker();
+        MathProblems mathProblems = new MathProblems();
         FileHandling fileHandling = new FileHandling();
 
         int numberOfTests = 0;
@@ -19,10 +19,10 @@ public class Main {
                 System.out.print("Vælg nu hvilken regneart du vil øve dig i. Skriv plus eller minus: ");
                 String input2 = scanner.nextLine();
                 if (input2.equals("plus") || input2.equals("Plus")) {
-                    regnestykker.plusMathProblems1();
+                    mathProblems.plusMathProblems1();
                 }
                 if (input2.equals("minus") || input2.equals("Minus")) {
-                    regnestykker.minusMathProblems1();
+                    mathProblems.minusMathProblems1();
                 }
             }
             if (input.equals("2")) {
@@ -30,10 +30,10 @@ public class Main {
                 System.out.print("Vælg nu hvilken regneart du vil øve dig i. Skriv plus eller minus: ");
                 String input2 = scanner.nextLine();
                 if (input2.equals("plus") || input2.equals("Plus")) {
-                    regnestykker.plusMathProblems2();
+                    mathProblems.plusMathProblems2();
                 }
                 if (input2.equals("minus") || input2.equals("Minus")) {
-                    regnestykker.minusMathProblems2();
+                    mathProblems.minusMathProblems2();
                 }
             }
             if (input.equals("print") || input.equals("Print")) {
