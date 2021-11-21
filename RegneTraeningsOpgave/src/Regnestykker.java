@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Regnestykker {
 
-    public static void plusMathProblems1() {
+    public void plusMathProblems1() {
         try {
             Scanner scanner = new Scanner(System.in);
             int max = 100;
@@ -12,7 +12,7 @@ public class Regnestykker {
             int range = max - min + 1;
             int right = 0;
             int wrong = 0;
-            String name = "";
+            String name;
 
             System.out.print("Skriv dit navn: ");
             name = scanner.nextLine();
@@ -51,7 +51,7 @@ public class Regnestykker {
         }
     }
 
-    public static void plusMathProblems2() {
+    public void plusMathProblems2() {
         Scanner scanner = new Scanner(System.in);
         int max = 100;
         int min = 1;
@@ -87,7 +87,7 @@ public class Regnestykker {
                 "\nSværhedsgrad: 2");
     }
 
-    public static void minusMathProblems1() {
+    public void minusMathProblems1() {
         Scanner scanner = new Scanner(System.in);
         int max = 100;
         int min = 1;
@@ -122,7 +122,7 @@ public class Regnestykker {
                 "\nSværhedsgrad: 1");
     }
 
-    public static void minusMathProblems2() {
+    public void minusMathProblems2() {
         Scanner scanner = new Scanner(System.in);
         int max = 100;
         int min = 1;

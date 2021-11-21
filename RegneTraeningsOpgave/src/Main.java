@@ -11,7 +11,7 @@ public class Main {
 
         while (true) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Skriv print for at vise dine resultater.");
+            System.out.println("Indtast print for at vise dine resultater.");
             System.out.print("Hvilken sværhedsgrad vil du vælge (1 er nemmere end 2). Indtast 1 eller 2: ");
             String input = scanner.nextLine();
             if (input.equals("1")) {
@@ -37,7 +37,9 @@ public class Main {
                 }
             }
             if (input.equals("print") || input.equals("Print")) {
-                fileHandling.readFiles();
+                System.out.print("Hvad er dit navn?: ");
+                String input3 = scanner.nextLine();
+                fileHandling.readFiles(input3 + ".txt");
             }
         }
     }

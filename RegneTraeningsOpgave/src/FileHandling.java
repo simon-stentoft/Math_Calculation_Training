@@ -4,14 +4,15 @@ import java.util.Scanner;
 
 public class FileHandling {
 
-    public static String readFiles(String name) {
+    public String readFiles(String name) {
         try {
             File file = new File(name);
             Scanner input = new Scanner(file);
-
-            while (input.hasNext()) {
-
+            while (input.hasNextLine()) {
+                String data = input.nextLine();
+                System.out.println(data);
             }
+            input.close();
         }
         catch (FileNotFoundException e) {
             System.out.println("No file found.");
