@@ -1,8 +1,12 @@
+import javax.imageio.IIOException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileHandling {
+    Scanner scanner = new Scanner(System.in);
 
     public String readFiles(String name) {
         try {
@@ -19,5 +23,17 @@ public class FileHandling {
             e.printStackTrace();
         }
         return name;
+    }
+
+    //Creates and appends stuff to files.
+    public void createFiles() {
+        try {
+            if()
+            System.out.print("Skriv dit navn: ");
+            String name = scanner.nextLine();
+            FileWriter file = new FileWriter(name + ".txt", true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
