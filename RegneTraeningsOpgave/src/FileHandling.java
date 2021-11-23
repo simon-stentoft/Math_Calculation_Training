@@ -24,16 +24,4 @@ public class FileHandling {
         }
         return name;
     }
-
-    //Creates and appends stuff to files.
-    public void createFiles() {
-        try {
-            if()
-            System.out.print("Skriv dit navn: ");
-            String name = scanner.nextLine();
-            FileWriter file = new FileWriter(name + ".txt", true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

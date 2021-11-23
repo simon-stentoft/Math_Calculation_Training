@@ -7,11 +7,14 @@ public class MathProblems {
     Scanner scanner = new Scanner(System.in);
     FileHandling fileHandling = new FileHandling();
 
+    int max = 100;
+    int min = 1;
+    int range = max - min + 1;
+    int numberOfTests = 0;
+    int allAnswersCorrect = 0;
+
     public void plusMathProblems1() {
         try {
-            int max = 100;
-            int min = 1;
-            int range = max - min + 1;
             int right = 0;
             int wrong = 0;
             String name;
@@ -36,9 +39,15 @@ public class MathProblems {
                     right++;
                 }
             }
-            file.format("Antal rigtige: %d\n",right);
-            file.append("Regneart: Plus \n");
-            file.append("Sværhedsgrad: 1");
+            if (right == 10) {
+                allAnswersCorrect++;
+            }
+            //Writing to file.
+            numberOfTests++;
+            file.write("\nAntal rigtige: " + right + "\n");
+            file.write("Regneart: Plus \n");
+            file.write("Sværhedsgrad: 1");
+            file.write("Antal tests: " + numberOfTests + "\n");
             file.close();
 
             double procentRight = (((double) right / 10) * 100);
@@ -55,9 +64,6 @@ public class MathProblems {
 
     public void plusMathProblems2() {
         try {
-            int max = 100;
-            int min = 1;
-            int range = max - min + 1;
             int right = 0;
             int wrong = 0;
             String name;
@@ -83,9 +89,15 @@ public class MathProblems {
                     right++;
                 }
             }
-            file.write("Antal rigtige: " + right + "\n");
+            if (right == 10) {
+                numberOfTests++;
+            }
+            //Writing to file.
+            numberOfTests++;
+            file.write("\nAntal rigtige: " + right + "\n");
             file.write("Regneart: Plus.\n");
             file.write("Sværhedsgrad 2\n");
+            file.write("Antal tests: " + numberOfTests + "\n");
             file.close();
 
             double procentRight = (((double) right / 10) * 100);
@@ -101,14 +113,9 @@ public class MathProblems {
     }
 
     public void minusMathProblems1() {
-        try {
-            int max = 100;
-            int min = 1;
-            int range = max - min + 1;
+      //  try {
             int right = 0;
             int wrong = 0;
-
-            fileHandling.createFiles();
 
             System.out.println("Her kommer der nogle minus regnestykker.");
 
@@ -133,15 +140,12 @@ public class MathProblems {
                     "\nProcent del rigtige: " + procentRight + "%" +
                     "\nRegneart: Minusstykker" +
                     "\nSværhedsgrad: 1");
-        } catch (IOException e) {
+       /* } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void minusMathProblems2() {
-        int max = 100;
-        int min = 1;
-        int range = max - min + 1;
         int right = 0;
         int wrong = 0;
 
