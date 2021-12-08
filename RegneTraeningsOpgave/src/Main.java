@@ -5,10 +5,6 @@ public class Main {
         MathProblems mathProblems = new MathProblems();
         FileHandling fileHandling = new FileHandling();
 
-        int numberOfTests = 0;
-        int plusProblems = 0;
-        int minusProblems = 0;
-
         while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Indtast print for at vise dine resultater.");

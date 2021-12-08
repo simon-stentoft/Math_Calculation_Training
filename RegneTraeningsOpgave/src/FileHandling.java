@@ -9,6 +9,8 @@ public class FileHandling {
     Scanner scanner = new Scanner(System.in);
 
     public String readFiles(String name) {
+        MathProblems mathProblems = new MathProblems();
+
         try {
             File file = new File(name);
             Scanner input = new Scanner(file);
@@ -17,6 +19,7 @@ public class FileHandling {
                 System.out.println(data);
             }
             input.close();
+            mathProblems.getNumberOfTests();
         }
         catch (FileNotFoundException e) {
             System.out.println("No file found.");

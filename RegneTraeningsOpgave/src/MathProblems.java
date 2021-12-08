@@ -7,21 +7,29 @@ public class MathProblems {
     Scanner scanner = new Scanner(System.in);
     FileHandling fileHandling = new FileHandling();
 
-    int max = 100;
-    int min = 1;
-    int range = max - min + 1;
-    int numberOfTests = 0;
-    int allAnswersCorrect = 0;
+    //Variables
+    private final int max = 100;
+    private final int min = 1;
+    private final int range = max - min + 1;
+    private int allAnswersCorrect = 0;
+    private int halfOrMoreCorrect = 0;
+    private String name;
+
+    private int plusProblems = 0;
+    private int minusProblems = 0;
+    private int numberOfTests = 0;
 
     public void plusMathProblems1() {
         try {
             int right = 0;
             int wrong = 0;
-            String name;
+            plusProblems++;
+            numberOfTests++;
 
             System.out.print("Skriv dit navn: ");
             name = scanner.nextLine();
-            PrintWriter file = new PrintWriter(name + ".txt");
+
+            FileWriter file = new FileWriter(name + ".txt",true);
 
             System.out.println("Her kommer der nogle plus regnestykker.");
 
@@ -31,6 +39,7 @@ public class MathProblems {
                 int result = a + b;
                 System.out.print("Hvad giver " + a + " + " + b + ": ");
                 int input = scanner.nextInt();
+                scanner.nextLine(); //Needed to type in new name on 2nd run of method.
                 if (input != result) {
                     System.out.println("Du svarede forkert, det korrekte svar er " + result + ".");
                     wrong++;
@@ -42,11 +51,13 @@ public class MathProblems {
             if (right == 10) {
                 allAnswersCorrect++;
             }
+            if (right > 4) {
+                halfOrMoreCorrect++;
+            }
             //Writing to file.
-            numberOfTests++;
             file.write("\nAntal rigtige: " + right + "\n");
-            file.write("Regneart: Plus \n");
-            file.write("Sværhedsgrad: 1");
+            file.write("Regneart: Plus\n");
+            file.write("Sværhedsgrad: 1\n");
             file.write("Antal tests: " + numberOfTests + "\n");
             file.close();
 
@@ -66,7 +77,6 @@ public class MathProblems {
         try {
             int right = 0;
             int wrong = 0;
-            String name;
 
             System.out.print("Skriv dit navn: ");
             name = scanner.nextLine();
@@ -90,10 +100,9 @@ public class MathProblems {
                 }
             }
             if (right == 10) {
-                numberOfTests++;
+                allAnswersCorrect++;
             }
             //Writing to file.
-            numberOfTests++;
             file.write("\nAntal rigtige: " + right + "\n");
             file.write("Regneart: Plus.\n");
             file.write("Sværhedsgrad 2\n");
@@ -174,5 +183,65 @@ public class MathProblems {
                 "\nProcent del rigtige: " + procentRight + "%" +
                 "\nRegneart: Minusstykker" +
                 "\nSværhedsgrad: 2");
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getAllAnswersCorrect() {
+        return allAnswersCorrect;
+    }
+
+    public void setAllAnswersCorrect(int allAnswersCorrect) {
+        this.allAnswersCorrect = allAnswersCorrect;
+    }
+
+    public int getHalfOrMoreCorrect() {
+        return halfOrMoreCorrect;
+    }
+
+    public void setHalfOrMoreCorrect(int halfOrMoreCorrect) {
+        this.halfOrMoreCorrect = halfOrMoreCorrect;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPlusProblems() {
+        return plusProblems;
+    }
+
+    public void setPlusProblems(int plusProblems) {
+        this.plusProblems = plusProblems;
+    }
+
+    public int getMinusProblems() {
+        return minusProblems;
+    }
+
+    public void setMinusProblems(int minusProblems) {
+        this.minusProblems = minusProblems;
+    }
+
+    public int getNumberOfTests() {
+        return numberOfTests;
+    }
+
+    public void setNumberOfTests(int numberOfTests) {
+        this.numberOfTests = numberOfTests;
     }
 }
